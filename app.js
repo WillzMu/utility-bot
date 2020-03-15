@@ -6,7 +6,7 @@ const app = express().use(body_parser.json()) // creates express http server
 const { handlePostback, handleMessage } = require('./helpers')
 const { pgClient } = require('./helpers/queries')
 const { callSendAPI } = require('./helpers')
-const { locationReceived } = require('./sendApi/messages')
+const { locationReceived, requestToFollowUp } = require('./sendApi/messages')
 
 pgClient.connect()
 
