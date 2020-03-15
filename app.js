@@ -23,8 +23,7 @@ app.listen(process.env.PORT || 5000, () => console.log('webhook is listening'))
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 
-
-app.get('/', (req, res) => {
+app.get('/location/:senderID', (req, res) => {
   res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
 
