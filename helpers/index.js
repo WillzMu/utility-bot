@@ -127,6 +127,7 @@ async function handleMessage (sender, message) {
     message.attachments[0].payload.url) {
       await saveImage(message.attachments[0].payload.url, sender.id)
       callSendAPI(sender.id, photoReceived)
+      callSendAPI(sender.id, { sender_action: 'typing_on' })
       callSendAPI(sender.id, requestToShareLocation(sender.id))
     } else if (message.quick_reply) {
       switch (message.quick_reply.payload) {

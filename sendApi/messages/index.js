@@ -128,6 +128,23 @@ const makeBackLater = {
   text: 'No problem. Come back later when you want to report an issue :)'
 }
 
+const requestToFollowUp = {
+  attachment: {
+    type: 'template',
+    payload: {
+      template_type: 'button',
+      text: 'You can view the status of your report by clicking the button below.',
+      buttons: [
+        {
+          type: 'postback',
+          title: 'Follow up a report',
+          payload: 'FOLLOW_UP'
+        }
+      ]
+    }
+  }
+}
+
 module.exports = {
   welcomeMessage,
   sharePhoto,
@@ -142,5 +159,6 @@ module.exports = {
   followUp,
   reportCarousel,
   noReports,
-  makeBackLater
+  makeBackLater,
+  requestToFollowUp
 }

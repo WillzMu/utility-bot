@@ -95,6 +95,7 @@ app.post('/location', async function (req, res) {
 
   try {
     await callSendAPI(senderID, locationReceived)
+    await callSendAPI(senderID, requestToFollowUp)
   } catch (error) {
     console.log(error)
   }
